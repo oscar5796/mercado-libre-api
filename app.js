@@ -1,10 +1,11 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const cors = require('cors');
 
-var app = express();
+const app = express();
 
-var apiRoutes = require('./routes/api');
+const apiRoutes = require('./routes/api');
 
+app.use(cors());
 app.use('/api', apiRoutes);
 
 app.listen(8888, () => {
